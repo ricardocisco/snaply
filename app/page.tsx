@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -228,7 +229,7 @@ export default function LandingPage() {
 
       // ── 3. GALLERY: photos drop in one by one as user scrolls ──────────
       // Each photo card starts off-screen above and falls into position
-      gsap.utils.toArray<HTMLElement>(".gallery-photo").forEach((el, i) => {
+      (gsap.utils.toArray(".gallery-photo") as HTMLElement[]).forEach((el, i) => {
         gsap.from(el, {
           opacity: 0,
           y: -80,
@@ -245,7 +246,7 @@ export default function LandingPage() {
       });
 
       // Upload progress bars: animate width as they appear
-      gsap.utils.toArray<HTMLElement>(".upload-bar-fill").forEach((el, i) => {
+      (gsap.utils.toArray(".upload-bar-fill") as HTMLElement[]).forEach((el, i) => {
         const targetWidth = el.getAttribute("data-width") ?? "100%";
         gsap.from(el, {
           width: "0%",
@@ -267,7 +268,7 @@ export default function LandingPage() {
 
       // ── 4. HOW IT WORKS: pin + step reveal ────────────────────────────
       // Steps fade in one by one
-      gsap.utils.toArray<HTMLElement>(".how-step").forEach((el, i) => {
+      (gsap.utils.toArray(".how-step") as HTMLElement[]).forEach((el, i) => {
         gsap.from(el, {
           opacity: 0,
           x: -40,
@@ -282,18 +283,18 @@ export default function LandingPage() {
       });
 
       // The phone in how-it-works section: scrub illustration changes
-      gsap.utils.toArray<HTMLElement>(".how-screen-state").forEach((el, i) => {
+      (gsap.utils.toArray(".how-screen-state") as HTMLElement[]).forEach((el, i) => {
         ScrollTrigger.create({
           trigger: `.how-step-${i}`,
           start: "top 60%",
           end: "bottom 40%",
           onEnter: () => {
-            gsap.utils.toArray<HTMLElement>(".how-screen-state").forEach((s, j) => {
+            (gsap.utils.toArray(".how-screen-state") as HTMLElement[]).forEach((s, j) => {
               gsap.to(s, { opacity: j === i ? 1 : 0, duration: 0.4 });
             });
           },
           onEnterBack: () => {
-            gsap.utils.toArray<HTMLElement>(".how-screen-state").forEach((s, j) => {
+            (gsap.utils.toArray(".how-screen-state") as HTMLElement[]).forEach((s, j) => {
               gsap.to(s, { opacity: j === i ? 1 : 0, duration: 0.4 });
             });
           }
@@ -301,7 +302,7 @@ export default function LandingPage() {
       });
 
       // ── 5. FEATURES grid: cascade in ──────────────────────────────────
-      gsap.utils.toArray<HTMLElement>(".feature-card").forEach((el, i) => {
+      (gsap.utils.toArray(".feature-card") as HTMLElement[]).forEach((el, i) => {
         gsap.from(el, {
           opacity: 0,
           y: 40,
@@ -332,7 +333,7 @@ export default function LandingPage() {
       });
 
       // ── 7. TESTIMONIALS: slide in from sides ───────────────────────────
-      gsap.utils.toArray<HTMLElement>(".proof-card").forEach((el, i) => {
+      (gsap.utils.toArray(".proof-card") as HTMLElement[]).forEach((el, i) => {
         gsap.from(el, {
           opacity: 0,
           x: i % 2 === 0 ? -30 : 30,
@@ -367,7 +368,7 @@ export default function LandingPage() {
       });
 
       // ── 9. Section headings: split reveal ─────────────────────────────
-      gsap.utils.toArray<HTMLElement>(".reveal-heading").forEach((el) => {
+      (gsap.utils.toArray(".reveal-heading") as HTMLElement[]).forEach((el) => {
         gsap.from(el, {
           opacity: 0,
           y: 30,
@@ -409,7 +410,7 @@ export default function LandingPage() {
       });
 
       // ── 12. Floating cards: continuous float ──────────────────────────
-      gsap.utils.toArray<HTMLElement>(".float-card").forEach((el, i) => {
+      (gsap.utils.toArray(".float-card") as HTMLElement[]).forEach((el, i) => {
         gsap.to(el, {
           y: i % 2 === 0 ? -10 : -6,
           duration: 2 + i * 0.3,
@@ -1196,7 +1197,7 @@ export default function LandingPage() {
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="proof-card">
                 <div className="proof-stars">★★★★★</div>
-                <p className="proof-text">"{t.text}"</p>
+                <p className="proof-text">&quot;{t.text}&quot;</p>
                 <div className="proof-author">
                   <div className="proof-avatar" style={{ background: t.bg }}>
                     {["👰", "🎉", "✈️"][i]}
@@ -1216,7 +1217,7 @@ export default function LandingPage() {
       <section className="pricing-section" id="planos">
         <div className="container">
           <div className="text-center">
-            <div className="section-tag reveal-heading">// Planos</div>
+            <div className="section-tag reveal-heading">Planos</div>
             <h2 className="section-title reveal-heading mx-auto" style={{ maxWidth: 480 }}>
               Preço justo para
               <br />
@@ -1252,7 +1253,7 @@ export default function LandingPage() {
       {/* ── CTA FINAL ────────────────────────────────────────────────── */}
       <section className="cta-section">
         <div className="cta-inner">
-          <div className="section-tag">// Comece agora</div>
+          <div className="section-tag">Comece agora</div>
           <h2 className="section-title">
             Seu próximo evento
             <br />
