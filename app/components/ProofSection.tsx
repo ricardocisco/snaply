@@ -2,12 +2,12 @@ import { TESTIMONIALS, STATS } from "@/app/data/landing";
 
 export default function ProofSection() {
   return (
-    <section className="proof-section bg-ink py-24 px-6" aria-label="Depoimentos e estatísticas">
-      <div className="stats-section max-w-[1080px] mx-auto">
+    <section className="bg-ink py-24 px-6" aria-label="Depoimentos e estatísticas">
+      <div className="stats-section max-w-270 mx-auto">
         {/* Stats */}
-        <dl className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
           {STATS.map((s, i) => (
-            <div key={i} className="stat text-center">
+            <div key={i} className="text-center">
               <dt
                 className="stat-num font-serif text-[52px] text-cream tracking-[-0.04em] leading-none"
                 data-target={s.target}
@@ -22,11 +22,11 @@ export default function ProofSection() {
         </dl>
 
         {/* Testimonials */}
-        <ul className="proof-grid grid grid-cols-1 md:grid-cols-3 gap-4 list-none m-0 p-0">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none m-0 p-0">
           {TESTIMONIALS.map((t, i) => (
             <li
               key={i}
-              className="proof-card bg-white/[0.04] border border-white/[0.06] rounded-2xl p-7 transition-colors hover:bg-white/[0.07]"
+              className="proof-card bg-white/4 border border-white/6 rounded-2xl p-7 transition-colors hover:bg-white/[0.07]"
             >
               <p className="text-[13px] tracking-[2px] text-accent2 mb-3" aria-label="5 estrelas">
                 ★★★★★

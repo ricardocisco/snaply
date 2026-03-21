@@ -4,13 +4,13 @@ import { PLANS } from "@/app/data/landing";
 export default function PricingSection() {
   return (
     <section id="planos" className="pricing-section py-24 px-6">
-      <div className="max-w-[1080px] mx-auto">
+      <div className="max-w-270 mx-auto">
         {/* Heading */}
         <div className="text-center">
           <p className="reveal-heading font-mono text-[11px] tracking-[0.12em] uppercase text-muted mb-4">
             {"// Planos"}
           </p>
-          <h2 className="reveal-heading font-serif text-[clamp(34px,5vw,58px)] leading-[1.05] tracking-[-0.03em] text-ink max-w-[480px] mx-auto">
+          <h2 className="reveal-heading font-serif text-[clamp(34px,5vw,58px)] leading-[1.05] tracking-[-0.03em] text-ink max-w-120 mx-auto">
             Preço justo para
             <br />
             <em className="italic text-accent">cada momento.</em>
@@ -25,7 +25,7 @@ export default function PricingSection() {
               className={`plan-card relative rounded-2xl p-9 border ${
                 plan.featured
                   ? "bg-ink text-cream scale-[1.04] shadow-[0_20px_60px_rgba(26,22,18,0.2)] border-transparent"
-                  : "bg-white border-ink/[0.06]"
+                  : "bg-white border-ink/6"
               }`}
             >
               {plan.badge && (
@@ -57,11 +57,11 @@ export default function PricingSection() {
                 </span>
               </p>
 
-              <p className={`text-[13px] mb-6 leading-[1.5] ${plan.featured ? "text-cream/45" : "text-muted"}`}>
+              <p className={`text-[13px] mb-6 leading-normal ${plan.featured ? "text-cream/45" : "text-muted"}`}>
                 {plan.desc}
               </p>
 
-              <hr className={`mb-5 border-0 h-px ${plan.featured ? "bg-cream/10" : "bg-ink/[0.06]"}`} />
+              <hr className={`mb-5 border-0 h-px ${plan.featured ? "bg-cream/10" : "bg-ink/6"}`} />
 
               <ul className="flex flex-col gap-2.5 mb-7 list-none m-0 p-0">
                 {plan.features.map((f, j) => (
@@ -70,7 +70,7 @@ export default function PricingSection() {
                     className={`flex items-center gap-2.5 text-[13px] ${plan.featured ? "text-cream/80" : "text-ink2"}`}
                   >
                     <span
-                      className={`inline-flex w-[18px] h-[18px] rounded-full items-center justify-center text-[10px] font-bold shrink-0 ${
+                      className={`inline-flex w-4.5 h-4.5 rounded-full items-center justify-center text-[10px] font-bold shrink-0 ${
                         plan.featured ? "bg-accent2/20 text-accent2" : "bg-brand-green/10 text-brand-green"
                       }`}
                       aria-hidden
@@ -84,10 +84,10 @@ export default function PricingSection() {
 
               <Link
                 href="/register"
-                className={`block text-center py-[13px] rounded-xl text-sm font-medium no-underline transition-colors ${
+                className={`block text-center py-3.25 rounded-xl text-sm font-medium no-underline transition-colors ${
                   plan.featured
                     ? "bg-cream text-ink hover:bg-white"
-                    : "bg-warm text-ink border border-ink/[0.08] hover:bg-ink/[0.06]"
+                    : "bg-warm text-ink border border-ink/8 hover:bg-ink/6"
                 }`}
               >
                 {plan.cta}

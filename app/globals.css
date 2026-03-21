@@ -28,13 +28,15 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── GSAP initial states (evita flash antes da animação inicializar) ─── */
-.gallery-slot {
-  opacity: 0;
-}
-.gallery-phone-sticky {
-  opacity: 0;
-}
-.phone-thumb {
-  opacity: 0;
+/* ─── GSAP initial states: só em desktop (evita flash antes do GSAP inicializar) ─── */
+@media (min-width: 1024px) {
+  .gallery-slot {
+    opacity: 0;
+  }
+  .gallery-phone-sticky {
+    opacity: 0;
+  }
+  .phone-thumb {
+    opacity: 0;
+  }
 }

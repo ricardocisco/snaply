@@ -22,7 +22,7 @@ export default function QrSection() {
   const value = "https://snaply-gamma.vercel.app";
   return (
     <section className="qr-section py-24 px-6 bg-cream">
-      <div className="qr-inner max-w-270 mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div className="max-w-270 mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         {/* Steps */}
         <div>
           <p className="reveal-heading font-mono text-[11px] tracking-[0.12em] uppercase text-muted mb-4">

@@ -2,8 +2,8 @@ import { FEATURES } from "@/app/data/landing";
 
 export default function FeaturesSection() {
   return (
-    <section id="funcionalidades" className="features-section py-24 px-6">
-      <div className="max-w-[1080px] mx-auto">
+    <section id="funcionalidades" className="py-24 px-6">
+      <div className="max-w-270 mx-auto">
         <div className="text-center">
           <p className="reveal-heading font-mono text-[11px] tracking-[0.12em] uppercase text-muted mb-4">
             {"// Funcionalidades"}
@@ -19,7 +19,7 @@ export default function FeaturesSection() {
           {FEATURES.map((f, i) => (
             <li
               key={i}
-              className="feature-card bg-white rounded-2xl p-7 border border-ink/[0.06] transition-transform transition-shadow duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(26,22,18,0.08)]"
+              className="feature-card bg-white rounded-2xl p-7 border border-ink/6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(26,22,18,0.08)]"
             >
               <span className="text-[28px] mb-3.5 block" role="img" aria-hidden>
                 {f.icon}
